@@ -6,6 +6,7 @@ import MyLang 1.0
 
 ApplicationWindow {
 
+
     id: applicationWindow1
     visible: true
     width: 800
@@ -20,16 +21,26 @@ ApplicationWindow {
     }*/
     QtObject {
         id: words
-        property var eng_words: [qsTr(
-                "Open Source App") + myTrans.emptyString, qsTr("Open Source Project") + myTrans.emptyString, qsTr(
-                "g/m") + myTrans.emptyString, qsTr("g/h") + myTrans.emptyString, qsTr(
-                "Kg/m") + myTrans.emptyString, qsTr("Kg/h") + myTrans.emptyString, qsTr(
-                "Main") + myTrans.emptyString, qsTr("Calibration") + myTrans.emptyString, qsTr(
-                "About") + myTrans.emptyString, qsTr("Calibration Weight") + myTrans.emptyString, qsTr(
-                "Selenoid Open Weight") + myTrans.emptyString, qsTr("Selenoid Close Weight") + myTrans.emptyString, qsTr(
-                "Offset") + myTrans.emptyString, qsTr("Close") + myTrans.emptyString, qsTr(
-                "Del") + myTrans.emptyString, qsTr("Cw") + myTrans.emptyString, qsTr(
-                "Sow") + myTrans.emptyString, qsTr("Scw") + myTrans.emptyString]
+        property var eng_words: [
+            qsTr("Open Source App") + myTrans.emptyString,
+            qsTr("Open Source Project") + myTrans.emptyString,
+            qsTr("g/m") + myTrans.emptyString,
+            qsTr("g/h") + myTrans.emptyString,
+            qsTr("Kg/m") + myTrans.emptyString,
+            qsTr("Kg/h") + myTrans.emptyString,
+            qsTr("Main") + myTrans.emptyString,
+            qsTr("Calibration") + myTrans.emptyString,
+            qsTr("About") + myTrans.emptyString,
+            qsTr("Calibration Weight") + myTrans.emptyString,
+            qsTr("Selenoid Open Weight") + myTrans.emptyString,
+            qsTr("Selenoid Close Weight") + myTrans.emptyString,
+            qsTr("Offset") + myTrans.emptyString,
+            qsTr("Close") + myTrans.emptyString,
+            qsTr("Del") + myTrans.emptyString,
+            qsTr("Cw") + myTrans.emptyString,
+            qsTr("Sow") + myTrans.emptyString,
+            qsTr("Scw") + myTrans.emptyString
+        ]
     }
 
     StackLayout {
@@ -62,12 +73,13 @@ ApplicationWindow {
                 width: 100
                 height: 40
                 font.family: "Arial"
-                model: ["TR", "ENG"]
+                model: ["TR", "ENG","sad"]
                 onCurrentIndexChanged: {
                     if (languageselect.currentText === "TR") {
                         myTrans.updateLanguage(MyLang.ENG)
-                    } else {
-                        myTrans.updateLanguage(MyLang.TR)
+                    }
+                    else{
+                         myTrans.updateLanguage(MyLang.TR)
                     }
                 }
             }
@@ -155,7 +167,7 @@ ApplicationWindow {
             y: 0
             width: 240
             height: 40
-            text: words.eng_words[8]
+            text:words.eng_words[8]
             font.bold: true
             font.pointSize: 20
             bottomPadding: 5

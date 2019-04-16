@@ -2,8 +2,16 @@ import QtQuick 2.0
 import QtQuick.Controls 2.0
 import QtQuick.Controls.Material 2.0
 
-
 Rectangle {
+
+    Connections{
+
+        target: setData
+        onGetOffset:{
+            gelendeger.text=c;
+        }
+    }
+
     id: rectangle
     Material.theme: Material.Light
     Material.accent: Material.Red
@@ -110,5 +118,22 @@ Rectangle {
         width: 800
         height: 10
         color: "#000000"
+    }
+
+
+    Button {
+        id: button
+        x: 219
+        y: 18
+        text: qsTr("Tıkla Bakalım")
+        onClicked: setData.setOffset("merhaba")
+    }
+
+    Label {
+        id: gelendeger
+        x: 155
+        y: 31
+        width: 100
+        height: 20
     }
 }

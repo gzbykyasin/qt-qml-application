@@ -7,6 +7,8 @@ PageBackground {
     id: pageBackground1
     width: 800
     height: 450
+    property alias calibration: calibration
+    property alias offset: offset
     property alias control: control
     today: "dd/MM/yy"
 
@@ -36,7 +38,7 @@ PageBackground {
     }
 
     Button {
-        id: button
+        id: offset
         x: 364
         y: 297
         width: 150
@@ -57,7 +59,7 @@ PageBackground {
     }
 
     Button {
-        id: button1
+        id: calibration
         x: 576
         y: 295
         width: 150
@@ -234,4 +236,3 @@ PageBackground {
         }
     }
 }
-

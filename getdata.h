@@ -2,18 +2,16 @@
 #define GETDATA_H
 
 #include <QObject>
-#include <QGuiApplication>
-#include <QQuickView>
-//#include "wiringPi.h"
 
-
-class GetData:public QObject
+class getData : public QObject
 {
     Q_OBJECT
+public:
+    explicit getData(QObject *parent = nullptr);
 
+signals:
 
-
+public slots:
 };
-
 
 #endif // GETDATA_H

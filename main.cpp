@@ -1,22 +1,32 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include <QThread>
-#include <QQuickView>
-#include <QQmlEngine>
+#include <QUrl>
+#include <QDebug>
 #include <QQmlContext>
+
 #include "mylang.h"
 #include "mytranslator.h"
-
+#include "setdata.h"
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
-
-    qmlRegisterType<MyLang>("MyLang", 1, 0, "MyLang");
-
     QQmlApplicationEngine engine;
-    MyTranslator myTrans(&app);
+    QQmlContext *conApp=engine.rootContext();
 
-    engine.rootContext()->setContextProperty("myTrans", (QObject*)&myTrans);
+    qmlRegisterType<MyLang>("MyLang", 1, 0, "MyLang");      //Translator class Qml add
+    MyTranslator myTrans(&app);                             //Translator class call
+
+    setData sData;                                          //Set data attr
+    QUrl appName(QString("%1").arg(app.applicationDisplayName()));
+    QUrl appPath(QString("%1").arg(app.applicationDirPath()));
+
+    qDebug()<<"Application "<<appName<<" is directory "<<appPath;
+
+    conApp->setContextProperty("myTrans", (QObject*)&myTrans);
+    conApp->setContextProperty("setData",(QObject*)&sData);
+
+
+
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
 
     return app.exec();

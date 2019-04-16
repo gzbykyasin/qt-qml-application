@@ -4,7 +4,9 @@ QT += qml quick
 
 CONFIG += c++11
 
-SOURCES += main.cpp
+SOURCES += main.cpp \
+    getdata.cpp \
+    setdata.cpp
 
 RESOURCES += qml.qrc
 
@@ -21,7 +23,8 @@ include(deployment.pri)
 HEADERS += \
     mylang.h \
     mytranslator.h \
-    getdata.h
+    getdata.h \
+    setdata.h
 
 
 
