@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>CustomLabel.qml</file>
+        <file>PageBackground.qml</file>
+        <file>Calibration.qml</file>
+        <file>CalibrationForm.ui.qml</file>
+        <file>Heating.qml</file>
+        <file>HeatingForm.ui.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>About.qml</file>
+        <file>AboutForm.ui.qml</file>
+        <file>Keyboard.qml</file>
+        <file>KeyboardForm.ui.qml</file>
+        <file>translator/tr_TR.qm</file>
+        <file>images/openSource.png</file>
+    </qresource>
+</RCC>
